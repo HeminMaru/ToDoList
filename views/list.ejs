@@ -16,10 +16,12 @@
     <div class="box">
         <% for(var i=0; i<allItems.length; i++) { %>
             <div class="item">
-                <input type="checkbox">
-                <p>
-                    <%= allItems[i] %>
-                </p>
+                <form class="item" action="/delete" method="POST">
+                    <input type="checkbox" name="checkbox" value=<%=allItems[i]._id %> onChange="this.form.submit()">
+                    <p>
+                        <%= allItems[i].item%>
+                    </p>
+                </form>
             </div>
             <% } %>
 
@@ -28,7 +30,9 @@
                     <button type="submit" name="button">+</button>
                 </form>
     </div>
-
+    <div class="copyright">
+        <p>© 2020 Hemin Maru</p>
+    </div>
 </body>
 
 </html>
